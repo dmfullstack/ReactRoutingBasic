@@ -4,7 +4,7 @@ import {Link, Route, Router} from 'react-router';
 
 const App = () => {
     return (
-        <h2>{'TutsPlus - Welcome to React!'}</h2>
+        <h2>{'TutsPlus - Welcome to React Routing Basic!'}</h2>
     );
 };
 
