@@ -1,13 +1,21 @@
 {
-  "name": "react_routing_app",
+  "name": "react-routing-basic",
+  "description": "A basic example for understanding how to handle routing in React.",
   "version": "1.0.0",
-  "description": "",
+  "author": "tutsplus",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tutsplus/ReactRoutingBasic.git"
+  },
+  "engines": {
+    "node": ">=6"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server",
+    "test": "eslint . --ext .json --ext .js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
@@ -18,6 +26,7 @@
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
+    "eslint-config-get-off-my-lawn": "^1.0.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   }

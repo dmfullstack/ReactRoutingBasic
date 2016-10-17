@@ -1,61 +1,62 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Router, Route, Link } from 'react-router'
+import React from 'react';
+import {render} from 'react-dom';
+import {Link, Route, Router} from 'react-router';
 
-var App = React.createClass({
-  render:function(){
-    return(
-      <div>
-        TutsPlus - Welcome to React 
-      </div>
+const App = () => {
+    return (
+        <h2>{'TutsPlus - Welcome to React Routing Basic!'}</h2>
     );
-  }
-});
+};
 
-var Navigation = React.createClass({
-	render: function(){
-		return(
-			<ul>
-				<li>
-					Home	
-				</li>
-				<li>
-				 	<Link to="/contactus">Contact us</Link>
-				</li>
-				<li>
-					<Link to="/aboutus">About us</Link>
-				</li>
-			</ul>
-		);
-	}
-});
+const Navigation = () => {
+    return (
+        <section>
+            <App />
+            <ul>
+                <li>{'Home'}</li>
+                <li>
+                    <Link to="/contact">{'Contact'}</Link>
+                </li>
+                <li>
+                    <Link to="/about">{'About'}</Link>
+                </li>
+            </ul>
+        </section>
+    );
+};
 
-var AboutUs = React.createClass({
-	render:function(){
-		return(
-			<div>
-				<h2>Welcome, to About Us</h2>
-				<Link to="/"> back to Home </Link>
-			</div>
-			)
-	}
-});
+const About = () => {
+    return (
+        <section>
+            <h2>{'Welcome to About!'}</h2>
+            <Link to="/">{'Back to Home'}</Link>
+        </section>
+    );
+};
 
-var ContactUs = React.createClass({
-	render:function(){
-		return(
-			<div>
-				<h2>Welcome, to Contact Us</h2>
-				<Link to="/"> back to Home </Link>
-			</div>
-			)
-	}
-});
+const Contact = () => {
+    return (
+        <section>
+            <h2>{'Welcome to Contact!'}</h2>
+            <Link to="/">{'Back to Home'}</Link>
+        </section>
+    );
+};
 
-render((
-	<Router>
-    	<Route path="/" component={Navigation} />
-    	<Route path="/aboutus" component={AboutUs} />
-    	<Route path="/contactus" component={ContactUs} />
-    </Router>
-	),document.getElementById('app'))
+render(
+    <Router>
+        <Route
+            component={Navigation}
+            path="/"
+        />
+        <Route
+            component={About}
+            path="/about"
+        />
+        <Route
+            component={Contact}
+            path="/contact"
+        />
+    </Router>,
+    document.getElementById('app')
+);
